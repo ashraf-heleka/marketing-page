@@ -78,13 +78,12 @@ body {
 /* Header section styles */
 
 nav {
-    .display-flx(row, left, left);
-    width: 80%;
-    margin: 5% 0 5% 10%;
+    .display-flx(row, space-evenly, center);
+    margin: 5% auto;
     a {
-        padding-right: 20%;
+        // padding-right: 9%;
         text-decoration: none;
-        font-size: 3.2vw;
+        font-size: calc(1em + 0.5vw);
         }
 }
 
@@ -99,20 +98,24 @@ nav {
 .leaderboard {
     .display-flx(column, center, center);
     margin: 4% 0;
+
+    .leaderboardImg {
+        .display-flx(column, center, center);
+        width: 90%;
+    }
     img {
         margin: 1.5% 0;
-        width: 80%;
     }
     p {
         margin: 2% 15%;
         text-align: justify;
-        font-size: 3vw;
+        font-size: calc(1em + 1vw);
     }
 }
 
 //About page
 h1 {
-    font-size: 5.9vw;
+    font-size: calc(1em + 3vw);
     font-weight: bold;
     margin: 0 12%;
 }
@@ -122,16 +125,14 @@ h1 {
     width: 60%;
 }
 .aboutContent{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+    .display-flx(column, center, left);
     margin: 5% 12% 0 12%;
     h2 {
-        font-size: 4.4vw;
+        font-size: calc(1em + 2vw);
         font-weight: bold;
     }
     p {
-        font-size: 3.2vw;
+        font-size: calc(1em + 0.8vw);
         text-align: justify;
     }
     ul {
@@ -139,7 +140,7 @@ h1 {
         list-style-position: inside;
     }
     li {
-        font-size: 3.2vw;
+        font-size:  calc(1em + 0.8vw);
         text-align: justify;
     }
 }
@@ -148,44 +149,88 @@ main {
     margin-bottom: 10%;
 }
  
-/* Media queries styles */
-
-// @media (min-width: 1025px){
-//     nav a {
-//         font-size: 22px;
-//     }
-//     .logoImg {
-//         width: 25%;
-//     }
-//     .leaderboardImg {
-//         width: 40%;
-//     }
-// }
-
-/* @media (max-width: 767px){
-    .skillsCont {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .skillsCont div {
-        width: 90%;
-        text-align: center;
+//Ad page
+ 
+.adPageImg {
+    .display-flx(column, space-evenly, center);
+    width: 85%;
+    margin: 0 auto;
+    img {
+        width: 60%;
+        margin: 4% 0;
     }
 }
 
-@media (max-width: 480px){
-    nav {
-        flex-direction: column;
-        align-items: center;
+.adPageMain {
+    .display-flx(column, center, left);
+    margin: 2% 12% 0 12%;
+    h2 {
+        font-size: calc(1em + 1.2vw);
+        font-weight: bold;
     }
-    .logoCont {
-        width: 15%;
+    p {
+        font-size: calc(1em + 0.5vw);
+        text-align: justify;
+        font-style: italic;
+        margin-bottom: 2%;
     }
-    .links {
-        width: 90%;
+    ul {
+        list-style-type: square;
+        list-style-position: inside;
     }
-    #about div {
-        width: 90%;
+    li:last-child {
+        margin-bottom: 10%;
     }
-} */
+}
+
+
+// Media queries styles homepage
+
+@media (min-width: 1025px){
+    .leaderboard {
+        .display-flx(row, center, center);
+        margin: 0 auto;
+        width: 70%;
+    }
+    .leaderboardImg {
+        margin: 0% auto;
+        padding: 10% 0;
+    }
+    .homePara {
+        width: 60%;
+        p {
+            font-size: calc(1em + 0.5vw);
+        }
+    }
+}
+
+
+// .leaderboard {
+//     .display-flx(column, center, center);
+//     margin: 4% 0;
+//     img {
+//         margin: 1.5% 0;
+//         width: 80%;
+//     }
+//     p {
+//         margin: 2% 15%;
+//         text-align: justify;
+//         font-size: calc(1em + 1vw);
+//     }
+// }
+
+
+
+// Media queries styles ad
+
+@media (min-width: 1025px){
+.adPageImg {
+    .display-flx(row, space-evenly, center);
+    img {
+        width: 40%;
+        margin: 4% 0;
+    }
+}
+}
+
+
