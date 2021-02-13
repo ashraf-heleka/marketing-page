@@ -1,0 +1,236 @@
+/* CSS reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Variables
+@background-color:#EDFDFA;
+@font-family:'Roboto';
+
+// Mixins
+.display-flx(@flxdirec, @jstcont, @algnit){
+    display: flex;
+    flex-direction: @flxdirec;
+    justify-content: @jstcont;
+    align-items: @algnit;
+    }
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    font-family: @font-family;
+}
+body {
+    line-height: 2;
+    min-width: 500px;    
+    background: @background-color;
+}
+
+/* Header section styles */
+
+nav {
+    .display-flx(row, space-evenly, center);
+    margin: 5% auto;
+    a {
+        // padding-right: 9%;
+        text-decoration: none;
+        font-size: calc(1em + 0.5vw);
+        }
+}
+
+.logoImg {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
+
+/* Leaderboard section styles */
+.leaderboard {
+    .display-flx(column, center, center);
+    margin: 4% 0;
+
+    .leaderboardImg {
+        .display-flx(column, center, center);
+        width: 90%;
+    }
+    img {
+        margin: 1.5% 0;
+    }
+    p {
+        margin: 2% 15%;
+        text-align: justify;
+        font-size: calc(1em + 1vw);
+    }
+}
+
+//About page
+h1 {
+    font-size: calc(1em + 3vw);
+    font-weight: bold;
+    margin: 0 12%;
+}
+.saltImg{
+    display: flex;
+    margin: 2% auto 5%;
+    width: 60%;
+}
+.aboutContent{
+    .display-flx(column, center, left);
+    margin: 5% 12% 0 12%;
+    h2 {
+        font-size: calc(1em + 2vw);
+        font-weight: bold;
+    }
+    p {
+        font-size: calc(1em + 0.8vw);
+        text-align: justify;
+    }
+    ul {
+        list-style-type: square;
+        list-style-position: inside;
+    }
+    li {
+        font-size:  calc(1em + 0.8vw);
+        text-align: justify;
+    }
+}
+
+main {
+    margin-bottom: 10%;
+}
+ 
+//Ad page
+ 
+.adPageImg {
+    .display-flx(column, space-evenly, center);
+    width: 85%;
+    margin: 0 auto;
+    img {
+        width: 60%;
+        margin: 4% 0;
+    }
+}
+
+.adPageMain {
+    .display-flx(column, center, left);
+    margin: 2% 12% 0 12%;
+    h2 {
+        font-size: calc(1em + 1.2vw);
+        font-weight: bold;
+    }
+    p {
+        font-size: calc(1em + 0.5vw);
+        text-align: justify;
+        font-style: italic;
+        margin-bottom: 2%;
+    }
+    ul {
+        list-style-type: square;
+        list-style-position: inside;
+    }
+    li:last-child {
+        margin-bottom: 10%;
+    }
+}
+
+
+// Media queries styles homepage
+
+@media (min-width: 1025px){
+    .leaderboard {
+        .display-flx(row, center, center);
+        margin: 0 auto;
+        width: 70%;
+    }
+    .leaderboardImg {
+        margin: 0% auto;
+        padding: 10% 0;
+    }
+    .homePara {
+        width: 60%;
+        p {
+            font-size: calc(1em + 0.5vw);
+        }
+    }
+}
+
+
+// .leaderboard {
+//     .display-flx(column, center, center);
+//     margin: 4% 0;
+//     img {
+//         margin: 1.5% 0;
+//         width: 80%;
+//     }
+//     p {
+//         margin: 2% 15%;
+//         text-align: justify;
+//         font-size: calc(1em + 1vw);
+//     }
+// }
+
+
+
+// Media queries styles ad
+
+@media (min-width: 1025px){
+.adPageImg {
+    .display-flx(row, space-evenly, center);
+    img {
+        width: 40%;
+        margin: 4% 0;
+    }
+}
+}
+
+
